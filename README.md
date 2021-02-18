@@ -15,5 +15,5 @@ The IDE should say something like <i>Library added to your libraries. Check "Inc
 <h1>Usage</h1>
 Include the library like this:<br>
 ```
-#include &gtDictionary.h&lt
+#include &ltDictionary.h&gt
 ```
