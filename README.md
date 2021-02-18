@@ -1,19 +1,15 @@
 # Arduino Dictionary
 
-This is a simple dictionary for Arduino. It uses LinkedList (It has its own version within it to ensure compatibility).
+This is a simple key-value dictionary for Arduino. It uses LinkedList (It has its own version within it to ensure compatibility).
 
 ## Installation
-  Click Code > Download ZIP
+1. Click Code > Download ZIP
+2. Open Arduino IDE
+3. From the Sketch menu select Include Library > Add .ZIP Library
+4. Navigate to Arduino-Dictionary-main.zip
+5. Click Open
 
-  Open Arduino IDE
-
-  From the Sketch menu select Include Library > Add .ZIP Library
-
-  Navigate to Arduino-Dictionary-main.zip
-
-  Click Open
-
-  The IDE should say something like Library added to your libraries. Check "Include library" menu.
+  The IDE should say something like *Library added to your libraries. Check "Include library" menu.*
 
 ## Usage
   Include the library like this:
@@ -21,3 +17,35 @@ This is a simple dictionary for Arduino. It uses LinkedList (It has its own vers
 ```cpp
   #include <Dictionary.h>
 ```
+Create an object like this:
+
+ ```cpp
+ //Object with String keys and String values
+ Dictionary<String, String> MyDict = Dictionary<String, String>();
+ ```
+ Or just
+ ```cpp
+ Dictionary<String, String> MyDict;
+ ```
+ Set a value:
+ ```cpp
+ //Set a value when key and value are String
+ MyDict.set("MyKey", "MyValue");
+ ```
+ 
+ Get a value:
+ ```cpp
+ //Get a value when a key is known
+ MyVal = MyDict.get("MyKey");
+ ```
+ 
+ Get a key when value is known:
+ ```cpp
+ //Get a key when value is known
+ MyKey = MyDict.getKey("MyValue");
+ ```
+ 
+ Get length of dictionary
+ ```cpp
+ length = MyDict.length();
+ ```
