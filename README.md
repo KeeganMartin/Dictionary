@@ -45,7 +45,7 @@ Create an object like this:
  MyKey = MyDict.getKey("MyValue");
  ```
  
- Get length of dictionary
+ Get length of dictionary:
  ```cpp
  length = MyDict.length();
  ```
