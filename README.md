@@ -10,4 +10,4 @@ This is a simple dictionary for Arduino. It uses LinkedList (It has its own vers
  <li>Navigate to Arduino-Dictionary-main.zip</li>
  <li>Click Open</li>
 </ol>
-The IDE should say something like Library added to your libraries. Check "Include library" menu.
+The IDE should say something like <i>Library added to your libraries. Check "Include library" menu.</i>
