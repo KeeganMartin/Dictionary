@@ -11,4 +11,4 @@ Click Open
 The IDE should say something like Library added to your libraries. Check "Include library" menu.
 #Usage
 Include the library like this:
-`#include &ltDictionary.h&gt`
+`#include <Dictionary.h>`
