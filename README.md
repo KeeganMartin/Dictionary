@@ -1,6 +1,6 @@
 # Arduino Dictionary
 
-This is a simple key-value dictionary for Arduino. It uses LinkedList (It has its own version within it to ensure compatibility).
+This is a simple key-value dictionary for Arduino. It uses LinkedList (It has its own version within it to ensure compatibility). This library has had very little testing, so use at your own risk.
 
 ## Installation
 1. Click Code > Download ZIP
