@@ -6,7 +6,7 @@ This is a simple key-value dictionary for Arduino. It uses LinkedList (It has it
 1. Click Code > Download ZIP
 2. Open Arduino IDE
 3. From the Sketch menu select Include Library > Add .ZIP Library
-4. Navigate to ArduinoDictionary-master.zip
+4. Navigate to Dictionary-master.zip
 5. Click Open
 
   The IDE should say something like *Library added to your libraries. Check "Include library" menu.*
@@ -17,7 +17,7 @@ This is a simple key-value dictionary for Arduino. It uses LinkedList (It has it
 ```cpp
   #include <Dictionary.h>
 ```
-Create an object like this:
+Create an object with String keys and String values:
 
  ```cpp
  //Object with String keys and String values
