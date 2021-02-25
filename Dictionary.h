@@ -10,6 +10,13 @@ private:
 public:
     void set(T key, U val)
     {
+        for (int i = 0; i < KeyList.size(); i++)
+        {
+            if (KeyList.get(i) == key) {
+                ValList.set(i, val);
+                return;
+            }
+        }
         KeyList.add(key);
         ValList.add(val);
     }
@@ -25,7 +32,7 @@ public:
         }
     }
 
-    T keyOf(U val)
+    T getKey(U val)
     {
         for (int i = 0; i < ValList.size(); i++)
         {
