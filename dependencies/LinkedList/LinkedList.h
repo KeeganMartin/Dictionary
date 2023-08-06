@@ -22,7 +22,7 @@ struct ListNode
 };
 
 template <typename T>
-class LinkedList
+class DLinkedList
 {
 
 protected:
@@ -40,8 +40,8 @@ protected:
 	ListNode<T> *getNode(int index);
 
 public:
-	LinkedList();
-	~LinkedList();
+	DLinkedList();
+	~DLinkedList();
 
 	/*
 		Returns current size of LinkedList
