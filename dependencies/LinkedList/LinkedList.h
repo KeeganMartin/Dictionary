@@ -22,7 +22,7 @@ struct ListNode
 };
 
 template <typename T>
-class LinkedList
+class DLinkedList
 {
 
 protected:
@@ -40,8 +40,8 @@ protected:
 	ListNode<T> *getNode(int index);
 
 public:
-	LinkedList();
-	~LinkedList();
+	DLinkedList();
+	~DLinkedList();
 
 	/*
 		Returns current size of LinkedList
@@ -97,7 +97,7 @@ public:
 
 // Initialize LinkedList with false values
 template <typename T>
-LinkedList<T>::LinkedList()
+DLinkedList<T>::DLinkedList()
 {
 	root = NULL;
 	last = NULL;
@@ -110,7 +110,7 @@ LinkedList<T>::LinkedList()
 
 // Clear Nodes and free Memory
 template <typename T>
-LinkedList<T>::~LinkedList()
+DLinkedList<T>::~DLinkedList()
 {
 	ListNode<T> *tmp;
 	while (root != NULL)
@@ -129,7 +129,7 @@ LinkedList<T>::~LinkedList()
 */
 
 template <typename T>
-ListNode<T> *LinkedList<T>::getNode(int index)
+ListNode<T> *DLinkedList<T>::getNode(int index)
 {
 
 	int _pos = 0;
@@ -164,13 +164,13 @@ ListNode<T> *LinkedList<T>::getNode(int index)
 }
 
 template <typename T>
-int LinkedList<T>::size()
+int DLinkedList<T>::size()
 {
 	return _size;
 }
 
 template <typename T>
-bool LinkedList<T>::add(int index, T _t)
+bool DLinkedList<T>::add(int index, T _t)
 {
 
 	if (index >= _size)
@@ -192,7 +192,7 @@ bool LinkedList<T>::add(int index, T _t)
 }
 
 template <typename T>
-bool LinkedList<T>::add(T _t)
+bool DLinkedList<T>::add(T _t)
 {
 
 	ListNode<T> *tmp = new ListNode<T>();
@@ -219,7 +219,7 @@ bool LinkedList<T>::add(T _t)
 }
 
 template <typename T>
-bool LinkedList<T>::unshift(T _t)
+bool DLinkedList<T>::unshift(T _t)
 {
 
 	if (_size == 0)
@@ -237,7 +237,7 @@ bool LinkedList<T>::unshift(T _t)
 }
 
 template <typename T>
-bool LinkedList<T>::set(int index, T _t)
+bool DLinkedList<T>::set(int index, T _t)
 {
 	// Check if index position is in bounds
 	if (index < 0 || index >= _size)
@@ -248,7 +248,7 @@ bool LinkedList<T>::set(int index, T _t)
 }
 
 template <typename T>
-T LinkedList<T>::pop()
+T DLinkedList<T>::pop()
 {
 	if (_size <= 0)
 		return T();
@@ -278,7 +278,7 @@ T LinkedList<T>::pop()
 }
 
 template <typename T>
-T LinkedList<T>::shift()
+T DLinkedList<T>::shift()
 {
 	if (_size <= 0)
 		return T();
@@ -302,7 +302,7 @@ T LinkedList<T>::shift()
 }
 
 template <typename T>
-T LinkedList<T>::remove(int index)
+T DLinkedList<T>::remove(int index)
 {
 	if (index < 0 || index >= _size)
 	{
@@ -328,7 +328,7 @@ T LinkedList<T>::remove(int index)
 }
 
 template <typename T>
-T LinkedList<T>::get(int index)
+T DLinkedList<T>::get(int index)
 {
 	ListNode<T> *tmp = getNode(index);
 
@@ -336,7 +336,7 @@ T LinkedList<T>::get(int index)
 }
 
 template <typename T>
-void LinkedList<T>::clear()
+void DLinkedList<T>::clear()
 {
 	while (size() > 0)
 		shift();

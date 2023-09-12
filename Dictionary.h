@@ -4,8 +4,8 @@ template <class T, class U>
 class Dictionary
 {
 private:
-    LinkedList<T> KeyList = LinkedList<T>();
-    LinkedList<U> ValList = LinkedList<U>();
+    DLinkedList<T> KeyList = DLinkedList<T>();
+    DLinkedList<U> ValList = DLinkedList<U>();
 
 public:
     void set(T key, U val)
