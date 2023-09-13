@@ -9,16 +9,16 @@
 	Released into the public domain.
 */
 
-#ifndef LinkedList_h
-#define LinkedList_h
+#ifndef DLinkedList_h
+#define DLinkedList_h
 
 #include <stddef.h>
 
 template <class T>
-struct ListNode
+struct DListNode
 {
 	T data;
-	ListNode<T> *next;
+	DListNode<T> *next;
 };
 
 template <typename T>
@@ -27,17 +27,17 @@ class DLinkedList
 
 protected:
 	int _size;
-	ListNode<T> *root;
-	ListNode<T> *last;
+	DListNode<T> *root;
+	DListNode<T> *last;
 
 	// Helps "get" method, by saving last position
-	ListNode<T> *lastNodeGot;
+	DListNode<T> *lastNodeGot;
 	int lastIndexGot;
 	// isCached should be set to FALSE
 	// everytime the list suffer changes
 	bool isCached;
 
-	ListNode<T> *getNode(int index);
+	DListNode<T> *getNode(int index);
 
 public:
 	DLinkedList();
@@ -112,7 +112,7 @@ DLinkedList<T>::DLinkedList()
 template <typename T>
 DLinkedList<T>::~DLinkedList()
 {
-	ListNode<T> *tmp;
+	DListNode<T> *tmp;
 	while (root != NULL)
 	{
 		tmp = root;
@@ -129,11 +129,11 @@ DLinkedList<T>::~DLinkedList()
 */
 
 template <typename T>
-ListNode<T> *DLinkedList<T>::getNode(int index)
+DListNode<T> *DLinkedList<T>::getNode(int index)
 {
 
 	int _pos = 0;
-	ListNode<T> *current = root;
+	DListNode<T> *current = root;
 
 	// Check if the node trying to get is
 	// immediatly AFTER the previous got one
@@ -179,7 +179,7 @@ bool DLinkedList<T>::add(int index, T _t)
 	if (index == 0)
 		return unshift(_t);
 
-	ListNode<T> *tmp = new ListNode<T>(),
+	DListNode<T> *tmp = new DListNode<T>(),
 				*_prev = getNode(index - 1);
 	tmp->data = _t;
 	tmp->next = _prev->next;
@@ -195,7 +195,7 @@ template <typename T>
 bool DLinkedList<T>::add(T _t)
 {
 
-	ListNode<T> *tmp = new ListNode<T>();
+	DListNode<T> *tmp = new DListNode<T>();
 	tmp->data = _t;
 	tmp->next = NULL;
 
@@ -225,7 +225,7 @@ bool DLinkedList<T>::unshift(T _t)
 	if (_size == 0)
 		return add(_t);
 
-	ListNode<T> *tmp = new ListNode<T>();
+	DListNode<T> *tmp = new DListNode<T>();
 	tmp->next = root;
 	tmp->data = _t;
 	root = tmp;
@@ -257,7 +257,7 @@ T DLinkedList<T>::pop()
 
 	if (_size >= 2)
 	{
-		ListNode<T> *tmp = getNode(_size - 2);
+		DListNode<T> *tmp = getNode(_size - 2);
 		T ret = tmp->next->data;
 		delete (tmp->next);
 		tmp->next = NULL;
@@ -285,7 +285,7 @@ T DLinkedList<T>::shift()
 
 	if (_size > 1)
 	{
-		ListNode<T> *_next = root->next;
+		DListNode<T> *_next = root->next;
 		T ret = root->data;
 		delete (root);
 		root = _next;
@@ -317,8 +317,8 @@ T DLinkedList<T>::remove(int index)
 		return pop();
 	}
 
-	ListNode<T> *tmp = getNode(index - 1);
-	ListNode<T> *toDelete = tmp->next;
+	DListNode<T> *tmp = getNode(index - 1);
+	DListNode<T> *toDelete = tmp->next;
 	T ret = toDelete->data;
 	tmp->next = tmp->next->next;
 	delete (toDelete);
@@ -330,7 +330,7 @@ T DLinkedList<T>::remove(int index)
 template <typename T>
 T DLinkedList<T>::get(int index)
 {
-	ListNode<T> *tmp = getNode(index);
+	DListNode<T> *tmp = getNode(index);
 
 	return (tmp ? tmp->data : T());
 }
