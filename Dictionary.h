@@ -47,4 +47,17 @@ public:
     {
         return KeyList.size();
     }
+
+    bool contains(T key) {
+        for (int x = 0; x < length(); x++) {
+            if(KeyList.get(x) == key) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    T getKeyByIndex(int index) {
+        return KeyList.get(index);
+    }
 };
